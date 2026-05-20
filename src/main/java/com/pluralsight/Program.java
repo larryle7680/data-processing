@@ -22,6 +22,8 @@ static Scanner theScanner = new Scanner(System.in);
         personList.add(new Person("Lenora", "Hurst", 42));
         personList.add(new Person("Morton", "Mcmahon", 80));
 
+
+        //Traditional Loop to find people from prompting the user to search
         //Prompt the user to find a name
         System.out.println("Please enter a first name to search: ");
         System.out.println();
@@ -31,6 +33,14 @@ static Scanner theScanner = new Scanner(System.in);
             if(name.getFirstName().equalsIgnoreCase(userSearch))
                 System.out.println(name);
         }
+
+
+        //Tradtional Loop to add all the ages together
+        int totalAge = 0;
+        for(Person age : personList){
+            totalAge += age.getAge();
+        }
+        System.out.println("The total age of everyone is " + totalAge);
 
     }
 
