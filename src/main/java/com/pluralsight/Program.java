@@ -41,6 +41,7 @@ static Scanner theScanner = new Scanner(System.in);
             totalAge += age.getAge();
         }
         System.out.println("The total age of everyone is " + totalAge);
+        System.out.println();
 
         //Traditional Loop to find the eldest person
         //Need to Pick a spot in the Array List
@@ -51,6 +52,18 @@ static Scanner theScanner = new Scanner(System.in);
             }
         }
         System.out.println("The Eldest Person is: \n" + eldest);
+        System.out.println();
+
+        //Traditional Loop to find the youngest person
+        //Need to Pick a spot in the Array List
+        Person youngest = personList.get(0);
+        for(Person person : personList){
+            if(person.getAge() < youngest.getAge()){
+                youngest = person;
+            }
+        }
+        System.out.println("The Youngest Person is: \n" + youngest);
+        System.out.println();
 
     }
 
