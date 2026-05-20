@@ -35,12 +35,22 @@ static Scanner theScanner = new Scanner(System.in);
         }
 
 
-        //Tradtional Loop to add all the ages together
+        //Traditional Loop to add all the ages together
         int totalAge = 0;
         for(Person age : personList){
             totalAge += age.getAge();
         }
         System.out.println("The total age of everyone is " + totalAge);
+
+        //Traditional Loop to find the eldest person
+        //Need to Pick a spot in the Array List
+        Person eldest = personList.get(0);
+        for(Person person : personList){
+            if(person.getAge() > eldest.getAge()){
+                eldest = person;
+            }
+        }
+        System.out.println("The Eldest Person is: \n" + eldest);
 
     }
 
