@@ -26,9 +26,29 @@ static Scanner theScanner = new Scanner(System.in);
         System.out.println("What is the first name you're searching for");
         String nameSearch = theScanner.nextLine();
 
+        //Step 1 User Search
+        //Stream starts
         personList.stream()
-                .filter(person -> person.getFirstName().equalsIgnoreCase(nameSearch))
+                //filter(Created a variable for the object
+                //Then using the variable to create a condition so the stream can satisfy
+                .filter(farts -> farts.getFirstName().equalsIgnoreCase(nameSearch))
+                //Print out the names found
                 .forEach(System.out::println);
+        System.out.println();
+
+        //Step 2 Find the Average age
+        double avgAge = personList.stream()
+                .mapToInt(character -> character.getAge())
+                .average()
+                .orElse(0);
+
+        System.out.println("The Average age of the people is: " + avgAge);
+
+
+
+
+
+
 
     }
 }
